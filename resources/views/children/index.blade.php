@@ -15,13 +15,13 @@
         <!-- Alert -->
         <div class="row">
             <div class="col-6">
-                <h1>Children</h1>
+                <h1>Хүүхдийн жагсаалт</h1>
             </div>
             <div class="col-6">
                 <!-- Button trigger modal -->
                <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary btn-sm float-right" data-toggle="modal" data-target="#exampleModal">
-                Child add
+                Хүүхэд нэмэх
                 </button>
             </div>
             <table class='table table-hover'>
@@ -31,14 +31,16 @@
                     <th>Төрсөн огноо</th>
                     <th>Регистер</th>
                     <th>Хүйс</th>
+                    <th>Үйлдэл</th>
                 </tr>
                 @foreach($child as $child_data)
                 <tr>
                     <td>{{$child_data->ovog}}</td>
                     <td>{{$child_data->ner}}</td>
                     <td>{{$child_data->date_of_birth}}</td>
-                        <td>{{$child_data->r_number}}</td>
+                    <td>{{$child_data->r_number}}</td>
                     <td>{{$child_data->hvis}}</td>
+                    <td><a href="/children/{{$child_data->id}}/edit" class="btn btn-warning btn-sm">Засах</a></td>
                 </tr>
                 @endforeach
 
@@ -91,8 +93,8 @@
               <label for="studentGender">Хүйс</label>
               <select class="form-control" id="Gender" name="hvis">
                 <option>-- Сонгох --</option>
-                <option>Эр</option>
-                <option>Эм</option>
+                <option value="male">Эр</option>
+                <option value="female">Эм</option>
               </select>
             </div>
             

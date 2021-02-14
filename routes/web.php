@@ -21,4 +21,11 @@ Route::get('/', function () {
 
 Route::get('/children',[ChildrenController::class,'children']);
 
+//Form аас post аар өгөгдлүүд шидэх
 Route::post('/children/create',[ChildrenController::class,'create']);
+
+//Edit дарсныг нь авна
+Route::get('/children/{id}/edit',[ChildrenController::class,'edit']);
+
+//Edit авсан өгөдлийг шинэжлээд DB шидэх
+Route::post('/children/{id}/update',[ChildrenController::class,'update']);

@@ -23,6 +23,17 @@ class ChildrenController extends Controller
 
         Children::create($req->all());
         return redirect('/children')->with('success','Амжилттай нэмэгдлээ!!!');
+    }
+    function edit($id){
+        $dataChild = Children::find($id);
+        // dd($dataChild);
 
+        return view('children.edit',['child' => $dataChild]);
+    }
+
+    function update(Request $req, $id){
+        $dataChild = Children::find($id);
+        $dataChild->update($req->all());
+        return redirect('/children')->with('success','Амжилттай нэмэгдлээ!!!');
     }
 }
