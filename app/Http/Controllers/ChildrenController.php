@@ -36,4 +36,10 @@ class ChildrenController extends Controller
         $dataChild->update($req->all());
         return redirect('/children')->with('success','Амжилттай нэмэгдлээ!!!');
     }
+    function delete($id){
+        $dataChild = Children::find($id);
+        // dd($dataChild);
+        $dataChild->delete($dataChild);
+        return redirect('/children')->with('success','Амжилттай устгагдлаа!!!');
+    }
 }

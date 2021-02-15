@@ -29,3 +29,6 @@ Route::get('/children/{id}/edit',[ChildrenController::class,'edit']);
 
 //Edit авсан өгөдлийг шинэжлээд DB шидэх
 Route::post('/children/{id}/update',[ChildrenController::class,'update']);
+
+//Delete дарсныг нь авна
+Route::get('/children/{id}/delete',[ChildrenController::class,'delete']);

@@ -34,7 +34,10 @@
                     <td>{{$child_data->date_of_birth}}</td>
                     <td>{{$child_data->r_number}}</td>
                     <td>{{$child_data->hvis}}</td>
-                    <td><a href="/children/{{$child_data->id}}/edit" class="btn btn-warning btn-sm">Засах</a></td>
+                    <td>
+                    <a href="/children/{{$child_data->id}}/edit" class="btn btn-warning btn-sm">Засах</a>
+                    <a href="/children/{{$child_data->id}}/delete" class="btn btn-danger btn-sm" onclick="return confirm('Хүүхдийн мэдээлэлээ устгах уу?')">Устгах</a>
+                    </td>
                 </tr>
                 @endforeach
 
